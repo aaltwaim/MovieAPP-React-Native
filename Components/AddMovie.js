@@ -1,16 +1,10 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { View, Text, TextInput, StyleSheet, Button } from 'react-native'
 
 export default function AddMovie() {
     const [id, setId] = useState("")
     const [message, setMessage] = useState(false)
-    useEffect(() => {
-        console.log("add", id)
-        return () => {
-
-        }
-    }, [])
     const addMovie = (id) => {
         axios.post(`http://10.0.2.2:8080/movieApp/movie/add?movieId=${id}`)
             .then((response) => {

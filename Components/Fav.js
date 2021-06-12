@@ -7,15 +7,8 @@ export default function Fav() {
     const [fav, setFav] = useState([])
     const [showDetails, setShowDetails] = useState(false)
     const [clickedID, setClickID] = useState("")
-    // let info = null;
     useEffect(() => {
-        // setTimeout(() => {
-        //     favMovie()
-
-        // }, 2000);
         favMovie()
-        return () => {
-        }
     }, [])
     const favMovie = () => {
         axios.get("http://10.0.2.2:8080/movieApp/movie/fav") // using 10.0.2.2 instead of localhost

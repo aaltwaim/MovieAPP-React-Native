@@ -6,7 +6,6 @@ import { NativeRouter, Route, Link } from "react-router-native";
 import Fav from './Fav';
 import AddMovie from './AddMovie';
 import Search from './Search';
-// import {useEffect} from 'react'
 
 export default function Home() {
 

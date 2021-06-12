@@ -5,7 +5,6 @@ import { View, Text, TextInput, StyleSheet, Button, FlatList } from 'react-nativ
 export default function Search() {
     const [search, setSearch] = useState("")
     const [result, setResult] = useState([])
-
     const searchMovie = (search) => {
         axios.get(`http://10.0.2.2:8080/movieApp/movie/search?freeText=${search}`)
             .then((response) => {

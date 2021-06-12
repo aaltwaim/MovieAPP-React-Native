@@ -7,10 +7,6 @@ export default function Details(props) {
     let id = props.id
     useEffect(() => {
         movieDetails()
-
-        return () => {
-
-        }
     }, [])
     const movieDetails = () => {
         axios.get(`http://10.0.2.2:8080/movieApp/movie/details?id=${props.id}`)
@@ -20,7 +16,6 @@ export default function Details(props) {
             }).catch((err) => {
                 console.log("error to get movie details", err);
             })
-
     };
     return (
         <View>
@@ -31,9 +26,8 @@ export default function Details(props) {
                     style={{ width: 100, height: 150 }}
                     source={{ uri: details.poster }} />
             </View>
-
-            <Text>Movie Description {details.movieDescription}</Text>
-            <Text>Genres {details.genres}</Text>
+            <Text>Movie Description: {details.movieDescription}</Text>
+            <Text>Genres: {details.genres}</Text>
         </View>
     )
 }
