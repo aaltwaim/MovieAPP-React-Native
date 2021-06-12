@@ -23,7 +23,7 @@ export default function LatestMovie() {
     return (
         <View>
             <Text>Movie Component</Text>
-            <Text> the name of the movie {movie.title}</Text>
+            <Text>The latest movie title: {movie.title}</Text>
 
         </View>
     )

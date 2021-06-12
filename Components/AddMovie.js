@@ -20,7 +20,6 @@ export default function AddMovie() {
             }).catch((err) => {
                 console.log("error to adding movie", err);
             })
-
     }
 
     return (
@@ -38,7 +37,7 @@ export default function AddMovie() {
                 title="Add it"
             />
             {message ? <View>
-                <Text>The movie was added successfully</Text>
+                <Text>The movie was added to your favorite successfully</Text>
             </View> : null}
         </View>
     )

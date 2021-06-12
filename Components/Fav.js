@@ -26,9 +26,6 @@ export default function Fav() {
                 console.log("error to get favourite movie", err);
             })
     }
-    const renderItem = ({ item }) => {
-        console.log("inside render", item.name);
-    }
     const toggleDetails = (id) => {
         setShowDetails(!showDetails)
         setClickID(id)
@@ -47,7 +44,6 @@ export default function Fav() {
                 console.log("error removing the movie", err);
             })
     }
-    console.log("render", renderItem, fav);
     //We can either use the id to call the api details of just get the info for the fav api
     return (
         <View>

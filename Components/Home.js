@@ -5,6 +5,7 @@ import LatestMovie from './LatestMovie'
 import { NativeRouter, Route, Link } from "react-router-native";
 import Fav from './Fav';
 import AddMovie from './AddMovie';
+import Search from './Search';
 // import {useEffect} from 'react'
 
 export default function Home() {
@@ -14,6 +15,9 @@ export default function Home() {
             <View>
                 <View>
                     <Text>Movie App</Text>
+                    <Link to="/search" >
+                        <Text>Search</Text>
+                    </Link>
                     <Link to="/latest" >
                         <Text>Latest</Text>
                     </Link>
@@ -24,6 +28,7 @@ export default function Home() {
                         <Text>Add Movie to fravourite</Text>
                     </Link>
                 </View>
+                <Route path="/search" component={Search} />
                 <Route path="/latest" component={LatestMovie} />
                 <Route path="/fav" component={Fav} />
                 <Route path="/add" component={AddMovie} />
