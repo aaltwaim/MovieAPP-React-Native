@@ -33,6 +33,20 @@ export default function Fav() {
         setShowDetails(!showDetails)
         setClickID(id)
     }
+    const removeMovie = (id) => {
+        axios.get(`http://10.0.2.2:8080/movieApp/movie/remove?id=${id}`)
+            .then((response) => {
+                const favList = [...fav];
+                const index = favList.findIndex(fav => fav.id === id);
+                if (index !== -1) {
+                    favList.splice(index, 1);
+                    setFav(favList);
+                }
+                console.log("fav res", response);
+            }).catch((err) => {
+                console.log("error removing the movie", err);
+            })
+    }
     console.log("render", renderItem, fav);
     //We can either use the id to call the api details of just get the info for the fav api
     return (
@@ -46,6 +60,10 @@ export default function Fav() {
                     <Button
                         onPress={() => toggleDetails(item.id)}
                         title="Details"
+                    />
+                    <Button
+                        onPress={() => removeMovie(item.id)}
+                        title="Remove"
                     />
                     {showDetails && clickedID === item.id ? <Details id={item.id} /> : null}
 

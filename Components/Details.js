@@ -17,6 +17,8 @@ export default function Details(props) {
             .then((response) => {
                 console.log("movie details", response.data.poster);
                 setDetails(response.data)
+            }).catch((err) => {
+                console.log("error to get movie details", err);
             })
 
     };
